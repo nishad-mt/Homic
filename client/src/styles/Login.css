@@ -1,4 +1,4 @@
-.signup-wrapper {
+.login-wrapper {
   height: 100dvh; /* Use dynamic viewport height */
   width: 100vw;
   display: flex;
@@ -11,7 +11,7 @@
   overflow: hidden; /* Prevent scrolling entirely */
 }
 
-.signup-container {
+.login-container {
   display: flex;
   width: 100%;
   max-width: 1200px;
@@ -25,7 +25,7 @@
 }
 
 /* Left Side */
-.signup-left {
+.login-left {
   flex: 1.2;
   background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
   position: relative;
@@ -36,7 +36,7 @@
 }
 
 /* Wavy abstract shapes */
-.signup-left::before {
+.login-left::before {
   content: "";
   position: absolute;
   top: -10%;
@@ -47,7 +47,7 @@
   border-radius: 50%;
   filter: blur(40px);
 }
-.signup-left::after {
+.login-left::after {
   content: "";
   position: absolute;
   bottom: -20%;
@@ -183,7 +183,7 @@
 }
 
 /* Right Side */
-.signup-right {
+.login-right {
   flex: 1;
   background-color: #ffffff;
   padding: clamp(20px, 4vh, 40px) clamp(20px, 4vw, 60px);
@@ -215,7 +215,7 @@
 
 .form-header {
   text-align: center;
-  margin-bottom: clamp(15px, 3vh, 25px);
+  margin-bottom: clamp(20px, 4vh, 30px);
 }
 
 .form-header h2 {
@@ -231,20 +231,10 @@
   margin: 0;
 }
 
-.signup-form {
+.login-form {
   display: flex;
   flex-direction: column;
-  gap: clamp(10px, 2vh, 16px); /* slightly reduced gap to fit more fields */
-}
-
-.form-row {
-  display: flex;
-  gap: 12px;
-  width: 100%;
-}
-
-.form-row .form-group {
-  flex: 1;
+  gap: clamp(12px, 2.5vh, 20px);
 }
 
 .form-group {
@@ -254,11 +244,17 @@
 }
 
 .form-group label {
-  font-size: clamp(11px, 1.3vw, 13px);
+  font-size: clamp(12px, 1.4vw, 14px);
   font-weight: 600;
   color: #374151;
   display: flex;
   justify-content: space-between;
+}
+
+.forgot-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .input-container {
@@ -271,16 +267,16 @@
   position: absolute;
   left: 14px;
   color: #9ca3af;
-  width: clamp(14px, 1.6vw, 18px);
-  height: clamp(14px, 1.6vw, 18px);
+  width: clamp(16px, 1.8vw, 20px);
+  height: clamp(16px, 1.8vw, 20px);
 }
 
 .input-field {
   width: 100%;
-  padding: clamp(8px, 1.5vh, 12px) clamp(8px, 1.5vh, 12px) clamp(8px, 1.5vh, 12px) clamp(30px, 3.5vw, 40px);
+  padding: clamp(10px, 2vh, 14px) clamp(10px, 2vh, 14px) clamp(10px, 2vh, 14px) clamp(35px, 4vw, 45px);
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  font-size: clamp(12px, 1.4vw, 14px);
+  font-size: clamp(13px, 1.5vw, 15px);
   color: #111827;
   outline: none;
   transition: all 0.2s;
@@ -305,53 +301,10 @@
   justify-content: center;
 }
 
-.role-selector {
-  display: flex;
-  gap: 12px;
-  margin-bottom: clamp(4px, 1vh, 8px);
-}
-
-.role-card {
-  flex: 1;
-  padding: clamp(8px, 1.5vh, 12px);
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
-  background: #f9fafb;
-}
-
-.role-card.active {
-  border-color: #2563eb;
-  background: #eff6ff;
-  color: #2563eb;
-  font-weight: 600;
-}
-
-.role-card .role-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.role-icon-svg {
-  width: 20px;
-  height: 20px;
-}
-
-.role-card span {
-  font-size: clamp(12px, 1.4vw, 14px);
-  color: inherit;
-}
-
 .remember-me {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-top: -2px;
 }
 
@@ -359,7 +312,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: clamp(11px, 1.3vw, 13px);
+  font-size: clamp(12px, 1.4vw, 14px);
   font-weight: 500;
   color: #374151;
   cursor: pointer;
@@ -372,12 +325,17 @@
   cursor: pointer;
 }
 
-.signup-btn {
+.keep-signed {
+  font-size: clamp(11px, 1.2vw, 13px);
+  color: #6b7280;
+}
+
+.login-btn {
   background-color: #2563eb;
   color: white;
   border: none;
   border-radius: 8px;
-  padding: clamp(10px, 2vh, 14px);
+  padding: clamp(12px, 2.5vh, 16px);
   font-size: clamp(14px, 1.6vw, 16px);
   font-weight: 600;
   display: flex;
@@ -386,10 +344,10 @@
   gap: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
-  margin-top: clamp(2px, 0.5vh, 5px);
+  margin-top: clamp(5px, 1vh, 10px);
 }
 
-.signup-btn:hover {
+.login-btn:hover {
   background-color: #1d4ed8;
 }
 
@@ -397,7 +355,7 @@
   display: flex;
   align-items: center;
   text-align: center;
-  margin: clamp(10px, 2vh, 20px) 0;
+  margin: clamp(15px, 3vh, 30px) 0;
 }
 
 .divider::before,
@@ -410,7 +368,7 @@
 .divider span {
   padding: 0 clamp(8px, 1.5vw, 15px);
   color: #6b7280;
-  font-size: clamp(11px, 1.3vw, 13px);
+  font-size: clamp(12px, 1.4vw, 14px);
 }
 
 .google-btn {
@@ -418,8 +376,8 @@
   border: 1px solid #e5e7eb;
   color: #374151;
   border-radius: 8px;
-  padding: clamp(8px, 1.5vh, 12px);
-  font-size: clamp(12px, 1.4vw, 14px);
+  padding: clamp(10px, 2vh, 14px);
+  font-size: clamp(13px, 1.5vw, 15px);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -434,8 +392,8 @@
 }
 
 .google-icon {
-  width: clamp(14px, 1.6vw, 18px);
-  height: clamp(14px, 1.6vw, 18px);
+  width: clamp(16px, 1.8vw, 20px);
+  height: clamp(16px, 1.8vw, 20px);
 }
 
 .security-badge {
@@ -446,7 +404,7 @@
   margin-top: auto; /* push to bottom */
   color: #6b7280;
   font-size: clamp(11px, 1.2vw, 13px);
-  padding-bottom: clamp(20px, 4vh, 30px); /* Leave room for footer */
+  padding-bottom: clamp(30px, 6vh, 40px); /* Leave room for footer */
 }
 
 .security-badge svg {
@@ -476,29 +434,19 @@
   text-decoration: underline;
 }
 
-/* Mobile Adjustments */
+/* Mobile Adjustments - Ensure single screen fit without overflow */
 @media (max-width: 900px) {
-  .signup-wrapper {
-    height: auto;
-    min-height: 100dvh;
-    overflow-y: auto;
-    align-items: flex-start;
-    padding: 0;
-  }
-
-  .signup-container {
+  .login-container {
     flex-direction: column;
-    height: auto;
-    min-height: 100dvh;
-    border-radius: 0;
   }
   
-  .signup-left {
-    flex: 0;
+  .login-left {
+    flex: 0; /* Let it size to content or hide if needed */
     padding: clamp(15px, 3vh, 20px);
-    display: none; 
+    display: none; /* Hide left side on smaller screens to guarantee 100vh fit for form */
   }
   
+  /* If you want to keep the brand on mobile but hide features/image */
   .mobile-brand-visible {
     display: flex;
     flex-direction: row;
@@ -508,43 +456,36 @@
     margin-bottom: 20px;
   }
   
-  .signup-right {
+  .login-right {
     flex: 1;
-    padding: 20px 20px 50px 20px;
-    justify-content: flex-start;
-    gap: 15px;
-    height: auto;
-  }
-  
-  .security-badge {
-    margin-top: 15px;
+    padding: clamp(15px, 3vh, 30px) clamp(15px, 4vw, 25px);
   }
 }
 
 /* Specific heights adjustment for tiny screens */
 @media (max-height: 700px) {
   .house-image-container {
-    display: none;
+    display: none; /* Hide house image on short screens to save space */
   }
   .features-list {
     margin-top: 10px;
     gap: 10px;
   }
   .form-header {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   .divider {
-    margin: 8px 0;
+    margin: 10px 0;
   }
   .security-badge {
-    padding-bottom: 20px;
+    padding-bottom: 25px;
   }
 }
 
 /* Super short mobile devices */
 @media (max-height: 550px) {
   .security-badge {
-    display: none; 
+    display: none; /* Hide non-essential bottom elements on very tiny screens */
   }
   .top-right-link {
     margin-bottom: 10px;
