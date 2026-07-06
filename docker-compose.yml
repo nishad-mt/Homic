@@ -1,5 +1,12 @@
 services:
   backend:
+    container_name: homic_backend  #CONTAINER NAME
     build:
       context: ./backend
       dockerfile: Dockerfile
+    ports:
+      - "8000:8000" # CONNECTING TO DJANGO PORT
+    volumes:
+      - ./backend:/app
+    env_file:
+      - ./backend/.env
